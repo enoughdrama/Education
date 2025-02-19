@@ -62,3 +62,12 @@
 - При успешном совпадении пользователь получает уведомление об успешном входе.
 
 ### Скриншоты
+
+#### Главное меню
+![image](https://github.com/user-attachments/assets/645bb85c-59a3-4c45-bb58-15dace0117b7)
+
+#### Окно авторизации
+![image](https://github.com/user-attachments/assets/4f5c3821-60f7-47c0-b375-56757d3c68de)
+
+#### Окно регистрации
+![image](https://github.com/user-attachments/assets/69a1bf58-526a-497f-896d-6ab5c97a283d)
