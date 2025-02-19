@@ -25,7 +25,7 @@
 ## Установка и запуск
 
 1. **Настройка базы данных**
-   - В файле `App.config` проверьте строку подключения. Пример:
+   - В файле `App.config` строка подключения к дб.
      ```xml
      <connectionStrings>
        <add name="DefaultConnection"
