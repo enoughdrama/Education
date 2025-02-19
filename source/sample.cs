@@ -1,3 +1,42 @@
+<Window x:Class="YourNamespace.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Главное окно" Height="350" Width="525">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Войти" Width="200" Margin="5" Click="LoginButton_Click"/>
+            <Button Content="Зарегистрироваться" Width="200" Margin="5" Click="RegisterButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
+
+using System.Windows;
+
+namespace YourNamespace
+{
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        // Обработчик нажатия кнопки "Войти"
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.ShowDialog();
+        }
+
+        // Обработчик нажатия кнопки "Зарегистрироваться"
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.ShowDialog();
+        }
+    }
+}
+
 <!-- LoginWindow.xaml -->
 <Window x:Class="YourNamespace.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
