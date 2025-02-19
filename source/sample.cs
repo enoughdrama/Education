@@ -1,3 +1,21 @@
+<!-- LoginWindow.xaml -->
+<Window x:Class="YourNamespace.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Авторизация" Height="300" Width="400">
+  <Grid Margin="10">
+    <StackPanel>
+      <TextBlock Text="Имя пользователя:" Margin="0,0,0,5"/>
+      <TextBox x:Name="UsernameTextBox" Margin="0,0,0,10" />
+      
+      <TextBlock Text="Пароль:" Margin="0,0,0,5"/>
+      <PasswordBox x:Name="PasswordBox" Margin="0,0,0,10"/>
+      
+      <Button Content="Войти" Click="LoginButton_Click" Width="100" HorizontalAlignment="Center"/>
+    </StackPanel>
+  </Grid>
+</Window>
+
 // User.cs
 using System.ComponentModel.DataAnnotations;
 
