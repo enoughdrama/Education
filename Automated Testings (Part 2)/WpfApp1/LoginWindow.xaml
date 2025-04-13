@@ -46,7 +46,7 @@
             HorizontalAlignment="Center" VerticalAlignment="Center" 
             Effect="{StaticResource DropShadowEffect}" Width="327">
             <StackPanel>
-                <TextBlock Text="Имя пользователя:"/>
+                <TextBlock Text="Юзернейц:"/>
                 <TextBox x:Name="UsernameTextBox"/>
                 <TextBlock Text="Пароль:"/>
                 <PasswordBox x:Name="PasswordBox"/>
