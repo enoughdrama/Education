@@ -110,10 +110,10 @@ public class Program
 
         var fixedDeposit = new FixedTermDeposit("Иванова И.В.", 5000m);
         var total = fixedDeposit.CalculateInterest(-12);
-        Console.WriteLine($"Сумма по долгосрочному вкладу: {total}");
+        Console.WriteLine($"Сумма по долгосрочному вкладу: {total}$");
 
         var demandDeposit = new OnDemandDeposit("Совсем не Иванова И.В.", 3000m);
         total = demandDeposit.CalculateInterest(6);
-        Console.WriteLine($"Сумма по вкладу до востребования: {total}");
+        Console.WriteLine($"Сумма по вкладу до востребования: {total}$");
     }
 }
