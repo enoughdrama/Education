@@ -1,0 +1,94 @@
+#include <windows.h>
+#include <math.h>
+
+struct Vector3 {
+    double x;
+    double y;
+    double z;
+};
+
+extern "C" {
+    __declspec(dllexport) double Add(double a, double b);
+    __declspec(dllexport) double Subtract(double a, double b);
+    __declspec(dllexport) double Multiply(double a, double b);
+    __declspec(dllexport) double Divide(double a, double b);
+    __declspec(dllexport) double Power(double base, double exponent);
+    __declspec(dllexport) double SquareRoot(double value);
+    __declspec(dllexport) Vector3 CrossProduct(Vector3 a, Vector3 b);
+    __declspec(dllexport) double DotProduct(Vector3 a, Vector3 b);
+    __declspec(dllexport) Vector3 Normalize(Vector3 v);
+    __declspec(dllexport) double GetLength(Vector3 v);
+}
+
+double Add(double a, double b) {
+    return a + b;
+}
+
+double Subtract(double a, double b) {
+    return a - b;
+}
+
+double Multiply(double a, double b) {
+    return a * b;
+}
+
+double Divide(double a, double b) {
+    if (b == 0.0) {
+        return INFINITY;
+    }
+    return a / b;
+}
+
+double Power(double base, double exponent) {
+    return pow(base, exponent);
+}
+
+double SquareRoot(double value) {
+    if (value < 0.0) {
+        return NAN;
+    }
+    return sqrt(value);
+}
+
+Vector3 CrossProduct(Vector3 a, Vector3 b) {
+    Vector3 result;
+    result.x = a.y * b.z - a.z * b.y;
+    result.y = a.z * b.x - a.x * b.z;
+    result.z = a.x * b.y - a.y * b.x;
+    return result;
+}
+
+double DotProduct(Vector3 a, Vector3 b) {
+    return a.x * b.x + a.y * b.y + a.z * b.z;
+}
+
+double GetLength(Vector3 v) {
+    return sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+}
+
+Vector3 Normalize(Vector3 v) {
+    double length = GetLength(v);
+    Vector3 result = {0, 0, 0};
+    
+    if (length > 0) {
+        result.x = v.x / length;
+        result.y = v.y / length;  
+        result.z = v.z / length;
+    }
+    
+    return result;
+}
+
+BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved) {
+    switch (fdwReason) {
+        case DLL_PROCESS_ATTACH:
+            break;
+        case DLL_THREAD_ATTACH:
+            break;
+        case DLL_THREAD_DETACH:
+            break;
+        case DLL_PROCESS_DETACH:
+            break;
+    }
+    return TRUE;
+}
